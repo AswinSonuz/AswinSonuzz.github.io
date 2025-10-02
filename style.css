@@ -1,0 +1,117 @@
+/* Reset & Body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+header nav ul li a {
+    color: #00ffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ff00ff;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding-top: 80px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    color: #00ffff;
+}
+
+.hero-text p {
+    margin: 20px 0;
+    font-size: 1.2rem;
+    max-width: 500px;
+}
+
+.software-btn {
+    padding: 12px 25px;
+    border: 2px solid #ff00ff;
+    background: transparent;
+    color: #ff00ff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.software-btn:hover {
+    background: #ff00ff;
+    color: #fff;
+}
+
+/* Hero Image */
+.hero-image img {
+    width: 300px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+    padding: 100px 20px;
+    background: rgba(255,255,255,0.05);
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.contact-icon img {
+    width: 50px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.contact-icon:hover img {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px #00ffff);
+}
