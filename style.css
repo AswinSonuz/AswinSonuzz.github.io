@@ -105,13 +105,14 @@ header nav ul li a:hover {
 }
 /* Base style similar to other buttons */
 /* Base style (cyan, same as other buttons) */
+/* Base style (cyan like other buttons) */
 .dillu-btn {
     display: inline-block;
     margin-top: 15px;
     padding: 12px 25px;
-    border: 2px solid #00ffff;   /* cyan border */
+    border: 2px solid #00ffff;
     background: transparent;
-    color: #00ffff;              /* cyan text */
+    color: #00ffff;
     font-weight: bold;
     text-decoration: none;
     border-radius: 8px;
@@ -120,7 +121,7 @@ header nav ul li a:hover {
     overflow: hidden;
 }
 
-/* Hover effect → turns pink/pookie */
+/* Hover → turns pink & glowing */
 .dillu-btn:hover {
     background: pink;
     border-color: pink;
@@ -128,55 +129,57 @@ header nav ul li a:hover {
     box-shadow: 0 0 15px pink, 0 0 30px hotpink, 0 0 45px deeppink;
 }
 
-/* Floating hearts animation */
+/* Create multiple floating hearts */
+.dillu-btn::before,
 .dillu-btn::after {
-    content: "💖 💕 💗 💞 💓";
+    content: "💖";
     position: absolute;
-    bottom: -20px;    /* closer to button */
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 16px;
     opacity: 0;
+    font-size: 18px;
     animation: none;
-    pointer-events: none;
 }
 
-/* Hearts trigger only when hovered */
+/* Second layer of hearts */
+.dillu-btn::after {
+    content: "💕";
+}
+
+/* Trigger animations on hover */
+.dillu-btn:hover::before {
+    animation: hearts1 2s ease-in-out infinite;
+}
 .dillu-btn:hover::after {
-    animation: floatHearts 2s ease-in-out infinite;
-    opacity: 1;
+    animation: hearts2 2s ease-in-out infinite;
 }
-
-/* Floating effect for hearts */
-@keyframes floatHearts {
-    0% {
-        transform: translateX(-50%) translateY(0);
-        opacity: 1;
-    }
-    50% {
-        transform: translateX(-50%) translateY(-25px);
-        opacity: 0.7;
-    }
-    100% {
-        transform: translateX(-50%) translateY(-50px);
-        opacity: 0;
-    }
-}
-
 
 /* Keyframes for floating hearts */
-@keyframes floatHearts {
+@keyframes hearts1 {
     0% {
-        transform: translateX(-50%) translateY(0);
+        left: 30%;
+        bottom: 0;
         opacity: 1;
-    }
-    50% {
-        transform: translateX(-50%) translateY(-30px);
-        opacity: 0.7;
+        transform: translateY(0) scale(1);
     }
     100% {
-        transform: translateX(-50%) translateY(-60px);
+        left: 20%;
+        bottom: 80px;
         opacity: 0;
+        transform: translateY(-20px) scale(1.5);
+    }
+}
+
+@keyframes hearts2 {
+    0% {
+        left: 70%;
+        bottom: 0;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        left: 60%;
+        bottom: 90px;
+        opacity: 0;
+        transform: translateY(-30px) scale(1.3);
     }
 }
 
@@ -285,6 +288,7 @@ header nav ul li a:hover {
         font-size: 0.9rem;
     }
 }
+
 
 
 
