@@ -104,13 +104,14 @@ header nav ul li a:hover {
     box-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff;
 }
 /* Base style similar to other buttons */
+/* Base style (cyan, same as other buttons) */
 .dillu-btn {
     display: inline-block;
     margin-top: 15px;
     padding: 12px 25px;
-    border: 2px solid #ff00ff;
+    border: 2px solid #00ffff;   /* cyan border */
     background: transparent;
-    color: #ff00ff;
+    color: #00ffff;              /* cyan text */
     font-weight: bold;
     text-decoration: none;
     border-radius: 8px;
@@ -119,9 +120,10 @@ header nav ul li a:hover {
     overflow: hidden;
 }
 
-/* Hover effect: pink & cute */
+/* Hover effect → turns pink/pookie */
 .dillu-btn:hover {
     background: pink;
+    border-color: pink;
     color: white;
     box-shadow: 0 0 15px pink, 0 0 30px hotpink, 0 0 45px deeppink;
 }
@@ -130,20 +132,37 @@ header nav ul li a:hover {
 .dillu-btn::after {
     content: "💖 💕 💗 💞 💓";
     position: absolute;
-    bottom: -40px;
+    bottom: -20px;    /* closer to button */
     left: 50%;
     transform: translateX(-50%);
-    font-size: 18px;
+    font-size: 16px;
     opacity: 0;
     animation: none;
     pointer-events: none;
 }
 
-/* Trigger hearts when hovered */
+/* Hearts trigger only when hovered */
 .dillu-btn:hover::after {
     animation: floatHearts 2s ease-in-out infinite;
     opacity: 1;
 }
+
+/* Floating effect for hearts */
+@keyframes floatHearts {
+    0% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(-50%) translateY(-25px);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50px);
+        opacity: 0;
+    }
+}
+
 
 /* Keyframes for floating hearts */
 @keyframes floatHearts {
@@ -266,6 +285,7 @@ header nav ul li a:hover {
         font-size: 0.9rem;
     }
 }
+
 
 
 
