@@ -103,6 +103,64 @@ header nav ul li a:hover {
     color: #0f0c29;
     box-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff;
 }
+/* Base style similar to other buttons */
+.dillu-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    border: 2px solid #ff00ff;
+    background: transparent;
+    color: #ff00ff;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hover effect: pink & cute */
+.dillu-btn:hover {
+    background: pink;
+    color: white;
+    box-shadow: 0 0 15px pink, 0 0 30px hotpink, 0 0 45px deeppink;
+}
+
+/* Floating hearts animation */
+.dillu-btn::after {
+    content: "💖 💕 💗 💞 💓";
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    opacity: 0;
+    animation: none;
+    pointer-events: none;
+}
+
+/* Trigger hearts when hovered */
+.dillu-btn:hover::after {
+    animation: floatHearts 2s ease-in-out infinite;
+    opacity: 1;
+}
+
+/* Keyframes for floating hearts */
+@keyframes floatHearts {
+    0% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(-50%) translateY(-30px);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateX(-50%) translateY(-60px);
+        opacity: 0;
+    }
+}
+
    
 /* Hero Image */
 /* Glow effect */
@@ -208,6 +266,7 @@ header nav ul li a:hover {
         font-size: 0.9rem;
     }
 }
+
 
 
 
