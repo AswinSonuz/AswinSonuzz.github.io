@@ -80,7 +80,8 @@ header nav ul li a:hover {
     background: #ff00ff;
     color: #fff;
 }
-.redirect-btn {
+
+.fitness {
     display: inline-block;
     margin-top: 15px;
     padding: 12px 25px;
@@ -93,7 +94,7 @@ header nav ul li a:hover {
     transition: 0.3s;
 }
 
-.redirect-btn:hover {
+.fitness:hover {
     background: #00ffff;
     color: #0f0c29;
     box-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff;
@@ -143,5 +144,6 @@ header nav ul li a:hover {
     transform: scale(1.2);
     filter: drop-shadow(0 0 10px #00ffff);
 }
+
 
 
