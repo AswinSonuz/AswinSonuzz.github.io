@@ -149,6 +149,65 @@ header nav ul li a:hover {
     filter: drop-shadow(0 0 10px #00ffff);
 }
 
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    /* Navbar stacked */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        text-align: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    header nav ul li a {
+        font-size: 1.1rem;
+    }
+
+    /* Hero text adjustments */
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    /* Buttons stacked */
+    .software-btn,
+    .redirect-btn {
+        display: block;
+        width: 80%;
+        max-width: 250px;
+        margin: 10px auto;
+    }
+
+    /* Contact icons wrap nicely */
+    .contact-icons {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .contact-icon img {
+        width: 40px;
+    }
+}
+
+/* Extra small devices (phones <480px) */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.6rem;
+    }
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+}
 
 
 
