@@ -109,6 +109,7 @@ header nav ul li a:hover {
 /* Base style (cyan to match your other buttons) */
 .dillu-btn {
     display: inline-block;
+    text-align: centre;
     margin-top: 15px;
     padding: 12px 25px;
     border: 2px solid #00ffff;
@@ -255,6 +256,7 @@ header nav ul li a:hover {
         font-size: 0.9rem;
     }
 }
+
 
 
 
