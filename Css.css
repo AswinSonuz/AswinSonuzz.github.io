@@ -1,0 +1,10 @@
+.romantic-pic {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px pink, 0 0 40px hotpink;
+    transition: transform 0.3s ease-in-out;
+}
+
+.romantic-pic:hover {
+    transform: scale(1.05);
+}
