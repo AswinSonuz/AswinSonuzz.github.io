@@ -268,6 +268,89 @@ header nav ul li a:hover {
     transform: scale(1.05);
 }
 
+/* Container for 2-column layout */
+.dillu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 50px;
+    padding: 20px;
+    background: black; /* futuristic bg */
+    color: white;
+}
+
+/* Left side image */
+.romantic-pic {
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px pink, 0 0 40px hotpink;
+    transition: transform 0.3s ease-in-out;
+}
+.romantic-pic:hover {
+    transform: scale(1.05);
+}
+
+/* Right side text */
+.dillu-right {
+    max-width: 400px;
+}
+.dillu-title {
+    font-size: 3rem;
+    color: pink;
+    text-shadow: 0 0 10px hotpink, 0 0 20px deeppink;
+}
+.dillu-desc {
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+/* Reveal button with heart animation */
+.reveal-btn {
+    padding: 12px 25px;
+    border: none;
+    background: pink;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.reveal-btn:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px pink, 0 0 30px hotpink;
+}
+
+/* Floating hearts on hover */
+.reveal-btn::before,
+.reveal-btn::after {
+    content: "💖";
+    position: absolute;
+    opacity: 0;
+    font-size: 20px;
+    animation: none;
+    pointer-events: none;
+}
+.reveal-btn::after {
+    content: "💕";
+}
+.reveal-btn:hover::before {
+    animation: hearts1 1.8s ease-in-out infinite;
+}
+.reveal-btn:hover::after {
+    animation: hearts2 1.8s ease-in-out infinite;
+}
+
+@keyframes hearts1 {
+    0% { left: 30%; bottom: 0; opacity: 1; transform: scale(1); }
+    100% { left: 20%; bottom: 80px; opacity: 0; transform: scale(1.5); }
+}
+@keyframes hearts2 {
+    0% { left: 70%; bottom: 0; opacity: 1; transform: scale(1); }
+    100% { left: 60%; bottom: 90px; opacity: 0; transform: scale(1.3); }
+}
 
 
 
