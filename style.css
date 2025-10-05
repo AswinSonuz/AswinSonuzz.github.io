@@ -126,8 +126,8 @@ header nav ul li a:hover {
 /* Fixed position in bottom-right */
 .fixed-dillu {
     position: fixed;
-    bottom: 40px;   /* adjust based on your screen */
-    right: 40px;    /* adjust based on your screen */
+    top: 20px;   /* adjust based on your screen */
+    right: 20px;    /* adjust based on your screen */
     z-index: 999;   /* stays above content */
 }
 
@@ -426,6 +426,7 @@ header nav ul li a:hover {
     color: black;
     box-shadow: 0 0 20px cyan;
 }
+
 
 
 
