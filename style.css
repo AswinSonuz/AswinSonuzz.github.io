@@ -128,7 +128,7 @@ header nav ul li a:hover {
     position: fixed;
     top: 20px;   /* adjust based on your screen */
     right: 20px;    /* adjust based on your screen */
-    z-index: 999;   /* stays above content */
+   
 }
 
 /* Hover → pink, glowing, enlarging */
@@ -426,6 +426,7 @@ header nav ul li a:hover {
     color: black;
     box-shadow: 0 0 20px cyan;
 }
+
 
 
 
