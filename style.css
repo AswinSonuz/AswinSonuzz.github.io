@@ -108,9 +108,9 @@ header nav ul li a:hover {
 /* Base style (cyan like other buttons) */
 /* Base style (cyan to match your other buttons) */
 .dillu-btn {
+    /* Styling */
     display: inline-block;
-    text-align: centre;
-    margin-top: 15px;
+    text-align: center; /* Typo fix: 'centre' to 'center' */
     padding: 12px 25px;
     border: 2px solid #00ffff;
     background: transparent;
@@ -119,28 +119,25 @@ header nav ul li a:hover {
     text-decoration: none;
     border-radius: 8px;
     transition: 0.4s;
-    position: relative;
     overflow: hidden;
+
+    /* Positioning - This is the key change */
+    position: fixed; /* Positions the button relative to the browser window */
+    top: 20px;       /* Distance from the top */
+    right: 20px;      /* Distance from the right */
+    z-index: 1000;   /* Ensures the button stays on top of other content */
 }
 
-/* Fixed position in bottom-right */
-.fixed-dillu {
-    position: fixed;
-    top: 100px;   /* adjust based on your screen */
-    right: 20px;    /* adjust based on your screen */
-   
-}
-
-/* Hover → pink, glowing, enlarging */
+/* Hover effect */
 .dillu-btn:hover {
     background: pink;
     border-color: pink;
     color: white;
-    transform: scale(1.2); /* enlarging effect */
+    transform: scale(1.2);
     box-shadow: 0 0 15px pink, 0 0 30px hotpink, 0 0 45px deeppink;
 }
 
-/* Floating hearts effect */
+/* Floating hearts effect (no changes needed here) */
 .dillu-btn::before,
 .dillu-btn::after {
     content: "💖";
@@ -426,6 +423,7 @@ header nav ul li a:hover {
     color: black;
     box-shadow: 0 0 20px cyan;
 }
+
 
 
 
