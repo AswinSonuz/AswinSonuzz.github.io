@@ -193,6 +193,324 @@ header nav ul li a:hover {
 @media (max-width: 768px) {
     /* HEADER: Compact and centered header */
     header {
+        /* Adjusted padding for better look when nav is hidden */
+        padding: 15px 20px; 
+        flex-direction: column;
+        align-items: center;
+        position: sticky; /* Sticky header for better mobile experience */
+        top: 0;
+        background: #0f0c29; /* Solid background on mobile to prevent transparency issues */
+    }
+
+    /* NEW: HIDE NAVIGATION MENU ON MOBILE */
+    header nav {
+        display: none;
+    }
+    
+    header .logo {
+        /* Removed margin-bottom since the nav below it is gone */
+        margin-bottom: 0;
+    }
+
+    /* HERO SECTION: Stack the buttons vertically and make them wide */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center; /* Center the stacked buttons */
+        width: 100%;
+        gap: 15px; /* Increase vertical spacing */
+        padding: 0 20px;
+    }
+
+    .software-btn,
+    .fitness,
+    .dillu-btn {
+        width: 100%; /* Full width within the container */
+        max-width: 300px; /* Max size for a clean look */
+        margin: 0; /* Reset margins */
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    /* Contact icons wrap nicely (existing) */
+    .contact-icons {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .contact-icon img {
+        width: 40px;
+    }
+}
+
+/* Extra small devices (phones <480px) */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.6rem;
+    }
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+}
+/* All Dillu related styles outside of home page (retained) */
+.romantic-pic {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px pink, 0 0 40px hotpink;
+    transition: transform 0.3s ease-in-out;
+}
+
+.romantic-pic:hover {
+    transform: scale(1.05);
+}
+
+/* Container for 2-column layout */
+.dillu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 50px;
+    padding: 20px;
+    background: black; /* futuristic bg */
+    color: white;
+}
+
+/* Left side image */
+.romantic-pic {
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px pink, 0 0 40px hotpink;
+    transition: transform 0.3s ease-in-out;
+}
+.romantic-pic:hover {
+    transform: scale(1.05);
+}
+
+/* Right side text */
+.dillu-right {
+    max-width: 400px;
+}
+.dillu-title {
+    font-size: 3rem;
+    color: pink;
+    text-shadow: 0 0 10px hotpink, 0 0 20px deeppink;
+}
+.dillu-desc {
+    font-size: 1.2rem;
+    margin: 15px 0;
+}
+
+/* Reveal button with heart animation */
+.reveal-btn {
+    padding: 12px 25px;
+    border: none;
+    background: pink;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.reveal-btn:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px pink, 0 0 30px hotpink;
+}
+
+/* Floating hearts on hover */
+.reveal-btn::before,
+.reveal-btn::after {
+    content: "💖";
+    position: absolute;
+    opacity: 0;
+    font-size: 20px;
+    animation: none;
+    pointer-events: none;
+}
+.reveal-btn::after {
+    content: "💕";
+}
+.reveal-btn:hover::before {
+    animation: hearts1 1.8s ease-in-out infinite;
+}
+.reveal-btn:hover::after {
+    animation: hearts2 1.8s ease-in-out infinite;
+}
+
+@keyframes hearts1 {
+    0% { left: 30%; bottom: 0; opacity: 1; transform: scale(1); }
+    100% { left: 20%; bottom: 80px; opacity: 0; transform: scale(1.5); }
+}
+@keyframes hearts2 {
+    0% { left: 70%; bottom: 0; opacity: 1; transform: scale(1); }
+    100% { left: 60%; bottom: 90px; opacity: 0; transform: scale(1.3); }
+}
+
+/* ---------- TOOLS PAGE ---------- */
+.tools-container {
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, #0a0a0f, #000);
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tools-title {
+    font-size: 3rem;
+    color: cyan;
+    text-shadow: 0 0 10px cyan, 0 0 30px #00eaff;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.tools-subtitle {
+    font-size: 1.1rem;
+    color: #aaa;
+    margin-bottom: 50px;
+}
+
+/* Grid of tool cards */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 40px;
+    justify-items: center;
+    padding: 0 20px;
+}
+
+.tool-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    width: 160px;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 15px rgba(0,255,255,0.05);
+}
+.tool-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+.tool-card h3 {
+    color: cyan;
+    font-size: 1rem;
+    margin: 0;
+}
+.tool-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    border-color: #00ffff;
+    box-shadow: 0 0 25px cyan, 0 0 50px #00eaff;
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 10px 25px;
+    border: 2px solid cyan;
+    color: cyan;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.back-btn:hover {
+    background: cyan;
+    color: black;
+    box-shadow: 0 0 20px cyan;
+}}
+
+/* Floating hearts effect (retained) */
+.dillu-btn::before,
+.dillu-btn::after {
+    content: "💖";
+    position: absolute;
+    opacity: 0;
+    font-size: 18px;
+    animation: none;
+    pointer-events: none;
+}
+
+/* Hero Image (Desktop only - assuming it was part of a larger layout) */
+.hero-image img {
+    width: 300px;
+    filter: drop-shadow(0 0 15px #00ffff)
+            drop-shadow(0 0 30px #00ffff)
+            drop-shadow(0 0 45px #ff00ff);
+    transition: filter 0.3s ease-in-out;
+}
+
+.hero-image img:hover {
+    filter: drop-shadow(0 0 25px #00ffff)
+            drop-shadow(0 0 50px #00ffff)
+            drop-shadow(0 0 75px #ff00ff);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+    padding: 100px 20px;
+    background: rgba(255,255,255,0.05);
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.contact-icon img {
+    width: 50px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.contact-icon:hover img {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px #00ffff);
+}
+
+/* ------------------------------------------- */
+/* --- DESKTOP VIEW FIX (min-width: 769px) --- */
+/* ------------------------------------------- */
+@media (min-width: 769px) {
+    /* Re-apply the desired fixed position for the Dillu button on larger screens */
+    .dillu-btn {
+        position: fixed;
+        top: 80px;
+        right: 50px;
+        z-index: 1000;
+        transform: none !important; /* Prevent hover scale affecting position */
+    }
+
+    /* Adjust the hero buttons flex layout for desktop (only two buttons will show here) */
+    .hero-buttons {
+        justify-content: flex-start;
+        /* The Dillu button is fixed, so the remaining buttons align to the left */
+    }
+}
+
+
+/* ------------------------------------------- */
+/* --- MOBILE RESPONSIVE STYLES (max-width: 768px) --- */
+/* ------------------------------------------- */
+@media (max-width: 768px) {
+    /* HEADER: Compact and centered header */
+    header {
         flex-direction: column;
         align-items: center;
         padding: 15px 0; /* Reduced horizontal padding */
@@ -749,6 +1067,7 @@ display: inline-block;
     color: black;
     box-shadow: 0 0 20px cyan;
 }
+
 
 
 
