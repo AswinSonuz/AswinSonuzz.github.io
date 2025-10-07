@@ -1,71 +1,119 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dillu (Locked)</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dillu Lock</title>
   <style>
-    :root{
-      --bg:#08060b;
-      --card:#0f1115;
-      --cyan:#00ffff;
-      --pink:#ff4da6;
-      --soft:#111217;
-      --muted:#9aa0a6;
+    body {
+      background-color: #0a0a0f;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
     }
 
-    /* Page layout */
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;}
-    body{
-      background: radial-gradient(circle at 10% 10%, rgba(0,255,255,0.03), transparent 10%),
-                  radial-gradient(circle at 90% 90%, rgba(255,77,166,0.03), transparent 10%),
-                  var(--bg);
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:30px;
-      box-sizing:border-box;
+    h1 {
+      font-size: 2.5rem;
+      color: pink;
+      text-shadow: 0 0 10px hotpink, 0 0 20px deeppink;
+      margin-bottom: 20px;
     }
 
-    /* Main container with image left and text right (hidden by lock) */
-    .dillu-container{
-      display:flex;
-      gap:48px;
-      align-items:center;
-      max-width:1000px;
-      width:100%;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-      padding:36px;
-      border-radius:20px;
-      box-shadow: 0 6px 30px rgba(0,0,0,0.6);
-      position:relative;
-      overflow:hidden;
+    .numpad {
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      gap: 15px;
     }
 
-    .dillu-left img{
-      width:380px;
-      max-width:40vw;
-      border-radius:16px;
-      box-shadow: 0 0 24px rgba(255,77,166,0.08), 0 0 40px rgba(0,255,255,0.04);
-      display:block;
+    .num-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid pink;
+      border-radius: 50%;
+      color: pink;
+      font-size: 1.5rem;
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px transparent;
     }
 
-    .dillu-right{max-width:420px;}
-    .dillu-title{
-      font-size:3.2rem;
-      margin:0;
-      color:var(--pink);
-      text-shadow: 0 0 10px rgba(255,77,166,0.6), 0 0 24px rgba(255,77,166,0.25);
-      letter-spacing:2px;
-    }
-    .dillu-desc{
-      margin:14px 0 24px 0;
-      color:var(--muted);
-      font-size:1.05rem;
+    .num-btn:hover {
+      background: pink;
+      color: white;
+      box-shadow: 0 0 15px hotpink, 0 0 30px deeppink;
+      transform: scale(1.1);
     }
 
-    .reveal-btn{
-      padding:12px 26px;
-      border-radius:40
+    #display {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      letter-spacing: 5px;
+      color: #ffb6c1;
+      text-shadow: 0 0 10px pink;
+    }
+
+    .footer {
+      margin-top: 40px;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Enter the Secret Code 💗</h1>
+  <div id="display">----</div>
+
+  <div class="numpad">
+    <button class="num-btn" onclick="press(1)">1</button>
+    <button class="num-btn" onclick="press(2)">2</button>
+    <button class="num-btn" onclick="press(3)">3</button>
+    <button class="num-btn" onclick="press(4)">4</button>
+    <button class="num-btn" onclick="press(5)">5</button>
+    <button class="num-btn" onclick="press(6)">6</button>
+    <button class="num-btn" onclick="press(7)">7</button>
+    <button class="num-btn" onclick="press(8)">8</button>
+    <button class="num-btn" onclick="press(9)">9</button>
+    <button class="num-btn" onclick="clearDisplay()">C</button>
+    <button class="num-btn" onclick="press(0)">0</button>
+    <button class="num-btn" onclick="checkPass()">OK</button>
+  </div>
+
+  <div class="footer">💞 Protected for Dillu 💞</div>
+
+  <script>
+    let entered = "";
+
+    function press(num) {
+      if (entered.length < 4) {
+        entered += num;
+        document.getElementById("display").textContent = entered.padEnd(4, "-");
+      }
+    }
+
+    function clearDisplay() {
+      entered = "";
+      document.getElementById("display").textContent = "----";
+    }
+
+    function checkPass() {
+      if (entered === "1802") {
+        document.getElementById("display").textContent = "💖 Unlocked!";
+        setTimeout(() => {
+          window.location.href = "dillu_real.html"; // redirect to real page
+        }, 1000);
+      } else {
+        document.getElementById("display").textContent = "❌ Wrong!";
+        setTimeout(clearDisplay, 1000);
+      }
+    }
+  </script>
+
+</body>
+</html>
